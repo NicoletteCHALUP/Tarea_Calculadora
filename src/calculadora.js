@@ -1,6 +1,10 @@
 function sumarNumeros(cadena) {
   
-  return 0; // Por ahora, solo para que las pruebas pasen
+  if (cadena === "") {
+    return 0;
+  } else {
+    return parseInt(cadena);
+  }
 }
 
 export default sumarNumeros;
