@@ -13,6 +13,10 @@ describe("Sumar números de cadena", () => {
     expect(sumarNumeros("1,2")).toEqual(3);
   });
 
-
+  
+  it("Debería devolver la suma de varios números para una cadena con varios números separados por coma", () => {
+    expect(sumarNumeros("1,2,3")).toEqual(6);
+  });
+  
 });
 
