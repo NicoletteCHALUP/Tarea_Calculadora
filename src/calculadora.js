@@ -1,10 +1,6 @@
 function sumarNumeros(cadena) {
   
-  if (cadena === "") {
-    return 0;
-  } else {
-    return parseInt(cadena);
-  }
+  return cadena === "" ? 0 : parseInt(cadena);
 }
 
 export default sumarNumeros;
