@@ -15,7 +15,4 @@ function obtenerDelimitadorYNumeros(cadena) {
     [",", cadena];
 }
 
-function escapeCaracteresRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // // $& significa toda la cadena coincidente
-}
 export default sumarNumeros;
