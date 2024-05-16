@@ -1,17 +1,16 @@
 function sumarNumeros(cadena) {
   if (cadena === "") return 0;
 
-  let delimitador = ",";
-  if (cadena.startsWith("//")) {
-    const partes = cadena.split("\n");
-    delimitador = partes[0][2];
-    cadena = partes[1];
-  }
+ 
+  const [delimitador, numeros] = cadena.startsWith("//") ?
+    cadena.substring(2).split("\n") :
+    [",", cadena];
 
-  return cadena
-    .split(delimitador)
-    .reduce((total, num) => total + parseInt(num), 0);
+    const numerosArray = numeros.split(new RegExp(escapeRegExp(delimitador), "g"));
+    return numerosArray.reduce((total, num) => total + parseInt(num), 0);
 }
 
-
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
 export default sumarNumeros;
