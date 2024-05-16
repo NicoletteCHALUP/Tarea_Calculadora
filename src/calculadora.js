@@ -4,10 +4,10 @@ function sumarNumeros(cadena) {
  
   const [delimitador, numeros] = obtenerDelimitadorYNumeros(cadena);
 
-    const numerosArray =numeros.split(delimitador)
+    const numerosComoArray =numeros.split(delimitador)
     .map(Number)
     .filter(num => num <= 1000);
-    return numerosArray.reduce((total, num) => total + num, 0);
+    return numerosComoArray.reduce((total, num) => total + num, 0);
 }
 function obtenerDelimitadorYNumeros(cadena) {
   return cadena.startsWith("//") ?
@@ -15,7 +15,7 @@ function obtenerDelimitadorYNumeros(cadena) {
     [",", cadena];
 }
 
-function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+function escapeCaracteresRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // // $& significa toda la cadena coincidente
 }
 export default sumarNumeros;
