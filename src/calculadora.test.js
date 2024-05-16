@@ -17,6 +17,11 @@ describe("Sumar números de cadena", () => {
   it("Debería devolver la suma de varios números para una cadena con varios números separados por coma", () => {
     expect(sumarNumeros("1,2,3")).toEqual(6);
   });
-  
+  it("Debería devolver la suma de varios números con delimitador personalizado", () => {
+    expect(sumarNumeros("//*\n1*2*3")).toEqual(6);
+    expect(sumarNumeros("//;\n6;7;4")).toEqual(17);
+    expect(sumarNumeros("//;\n6;3;1")).toEqual(10);
+  });
+
 });
 
