@@ -6,8 +6,10 @@ function sumarNumeros(cadena) {
     cadena.substring(2).split("\n") :
     [",", cadena];
 
-    const numerosArray = numeros.split(new RegExp(escapeRegExp(delimitador), "g"));
-    return numerosArray.reduce((total, num) => total + parseInt(num), 0);
+    const numerosArray = numeros.split(new RegExp(escapeRegExp(delimitador), "g"))
+    .map(Number)
+    .filter(num => num <= 1000);
+    return numerosArray.reduce((total, num) => total + num, 0);
 }
 
 function escapeRegExp(string) {

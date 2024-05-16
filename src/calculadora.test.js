@@ -22,6 +22,10 @@ describe("Sumar números de cadena", () => {
     expect(sumarNumeros("//;\n6;7;4")).toEqual(17);
     expect(sumarNumeros("//;\n6;3;1")).toEqual(10);
   });
+  it("Debería ignorar los números mayores a 1000", () => {
+    expect(sumarNumeros("2,1001")).toEqual(2);
+    expect(sumarNumeros("//;\n6;1001;1")).toEqual(7);
+  });
 
 });
 
